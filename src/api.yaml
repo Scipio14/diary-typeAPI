@@ -1,0 +1,16 @@
+swagger: "2.0"
+info: 
+  title: Diary entries
+  description: This is an API that returns diary entries from flights
+  version: 1.0.0
+  servers: 
+    -url: http://localhost:3000/diaries
+schemes: [http,https]
+
+paths:
+  /diaries:
+    get:
+      tags: 
+      - "diary"
+      summary: Returns an array of JSON objects
+      description: Returns all of the diary entries in the API 
