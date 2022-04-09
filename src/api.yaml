@@ -12,5 +12,60 @@ paths:
     get:
       tags: 
       - "diary"
-      summary: Returns an array of JSON objects
-      description: Returns all of the diary entries in the API 
+      summary: Returns an array of diary entries
+      description: Returns all of the diary entries in the API
+      responses: 
+        200: 
+          description: Success
+          schema: 
+            type: array
+            items:
+              type: object 
+              properties: 
+                id:
+                  type: integer
+                date:
+                  type: string
+                weather:
+                  type: string
+                visibility: 
+                  type: string 
+
+    post: 
+      tags:
+      - "diary"
+      summary: Creates a new diary entry
+      description: Creates a new diary entry to the API and returns a JSON object with the information
+      responses:
+        201:
+          description: Creates one entry
+        400:
+          description: Bad request
+  /diaries/:id: 
+    get: 
+      tags: 
+      - "diary"
+      summary: Returns a JSON Object
+      description: Returns the entry with the id provided in JSON format
+      responses: 
+        200:
+          description: One entry
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              date:
+                type: string
+              weather:
+                type: string
+              visibility: 
+                type: string 
+        404: 
+          description: Resource not found
+          schema: 
+            type: string
+            example: "Not Found"
+  
+
+
