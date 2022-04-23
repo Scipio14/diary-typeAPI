@@ -36,12 +36,13 @@ paths:
       - "diary"
       summary: Creates a new diary entry
       description: Creates a new diary entry to the API and returns a JSON object with the information
+              
       responses:
         201:
           description: Creates one entry
         400:
           description: Bad request
-  /diaries/:id: 
+  /diaries/{id}: 
     get: 
       tags: 
       - "diary"
